@@ -85,23 +85,9 @@
                         <select class="documentSelect" id="docType" name="docType">
                             <option disabled selected value>-- Select An Option -- </option>
                             <option value="Hypothesis Document">Hypothesis Document</option>
-                            <!---<option value="Test Idea">Test Idea</option>
-                        <option value="Client Insight">Client Insight</option>-->
                             <option value="Experiment Sprint">Experiment Sprint</option>
                         </select>
-                        <div class="uc-typeButtons-wrap">
-                            <h3>Type of Idea:</h3>
-                            <!--< <div name="Hypothesis Document" class="uc-typeButton"><inpHypothesis Document</div>
-                      <div name="Hypothesis Document" class="uc-typeButton">Hypothesis Document</div>
-                        <div name="Test Idea" class="uc-typeButton">Test Idea</div> 
-                        <div name="Experiment Sprint" class="uc-typeButton">Experiment Sprint</div>-->
-                            <div name="Hypothesis Document" class="uc-typeButton">
-                                <input type="radio" class="uctopradio" name="ucradio" value="Hypothesis Document" id="hypothesis">Hypothesis Document
-                            </div>
-                            <div name="Experiment Sprint" class="uc-typeButton">
-                                <input type="radio" class="uctopradio" name="ucradio" value="Experiment Sprint" id="sprint"/>Organise a Sprint
-                            </div>
-                        </div>
+                        
                         <input id="pulledTestID" type="hidden" name="pulledTestID" value="">
                         <input id="listID" type="hidden" name="listID" value="">
                         <input id="boardID" type="hidden" name="boardID" value="">
@@ -109,436 +95,142 @@
                         <br>
                         <br>
                     </div>
-            </div>
-            <div class="uc_form-content">
-                <div id="uc_hypothesis" class="hypothesis_form second_section hidden">
-                    <!-- <div class="testIdbutton">
-                    <button id="getTestId" type="button">Generate Test ID</button> <span id="showTestId"></span>
-                </div> -->
-                    <span class="form-field">
-                        <label class="label" for="input-10">Test ID:
-                    </label>
-                        <input id="testID" class="field" type="text" value="" name="testID" size="40">
-                        <span class="underfieldtext">This will be assigned automatically based on the ‘next’ ID, but you can change this and assign manually if needed</span>
-                    </span>
-                    <span class="form-field">
-                        <label class="label" for="input-10">Test Name:
-                    </label>
-                        <input id="testName" class="field" type="text" name="testName" size="40">
-                    </span>
-                    <span class="form-field">
-                        <label class="label" for="input-10">Number of Variations:
-                    </label>
-                        <input name="variations" id="variations" class="field" type="text" size="40" style="height:25px;">
-                    </span>
-                    <span class="form-field">
-                        <label class="label" for="input-10">Traffic % Per variation:
-                        </label>
-                        <input id="trafficPercent" type="text" class="field" name="trafficPercent" size="40" style="height:25px;">
-                    </span>
-                    <span class="form-field">
-                        <label class="label" for="input-10">Minimum Detectable effect
-                </label>
-                        <input id="minEffect" class="field" type="text" name="minEffect" size="40" value="5" style="height:25px;">
-                        <span class="MDE-percent">%</span>
-                    </span>
-                    <span class="form-field">
-                        <label class="label" for="input-10">Baseline Conversion Rate
-                    </label>
-                        <input id="baseline" type="text" class="field" name="baseline" size="40" style="height:25px;">
-                        <span class="underfieldtext">
-                            Visit 
-                            <a href="http://www.evanmiller.org/ab-testing/sample-size.html" target="_blank">
-                                www.evanmiller.org/ab-testing/sample-size.html <img src="/UCFORM_images/new-tab.png"/>
-                            </a>
-                            for more information
-                        </span>
-                    </span>
-                    <span class="form-field">
-                        <label class="label" for="input-10">Required Sample Size
-                        </label>
-                        <input id="sampleSize" type="text" class="field" name="sampleSize" size="40" style="height:25px;">
-                    </span>
-                    <span class="form-field">
-                        <label class="label" for="input-10">Estimated Run Length (Days)
-                    </label>
-                        <input id="runLength" class="field" name="runLength" cols="39" rows="5">
-                    </span>
-                    <div class="selectDevise form-field first-field">
-                        <h3 class="devices hypo">Please select devices:</h3>
-                        <select id="devices" name="devices">
-                            <option disabled selected value>-- Select An Option -- </option>
-                            <option value="Mobile">Mobile</option>
-                            <option value="Tablet">Tablet</option>
-                            <option value="Desktop">Desktop</option>
-                            <option value="Mobile, Desktop">Mobile, Desktop</option>
-                            <option value="Mobile, Tablet">Mobile, Tablet</option>
-                            <option value="Tablet, Desktop">Tablet, Desktop</option>
-                            <option value="Mobile, Tablet, Desktop">Mobile, Tablet, Desktop</option>
-                        </select>
-                    </div>
-                    <span class="form-field">
-                        <label class="label" for="input-10">Targeting Information
-                       </label>
-                        <textarea id="targeting" type="text" class="field" name="targeting" cols="39" rows="5" style="height:60px;"></textarea>
-                        <span class="underfieldtext">Page URLS, Regex Information, Exclusions</span>
-                    </span>
-                    <hr class="ucform-breakpoint">
-                    <div class="form-field selectSize first-field">
-                        <h3 class="expSize hypo">Please select size of experiment</h3>
-                        <select id="expSize" name="expSize">
-                            <option disabled selected value>-- Select An Option -- </option>
-                            <option value="Small">Small</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Large">Large</option>
-                        </select>
-                        <span class="underfieldtext">What do you estimate the development effort for this experiment to be? Small? Medium? Large?</span>
-                    </div>
-                    <span class="form-field">
-                        <label class="label" for="input-10">Test Hypothesis</label>
-                        <textarea id="testHyp" class="field" name="hypothesis" cols="39" rows="5" style="height:60px;"></textarea>
-                    </span>
-                    <span class="form-field">
-                        <label class="label" for="input-10">Supporting Insights</label>
-                        <textarea id="supportInsights" class="field" name="insights" cols="39" rows="5" style="height:60px;"></textarea>
-                    </span>
-                    <hr class="ucform-breakpoint">
-                    <span class="form-field">
-                        <label class="label" for="input-10">Primary Experiment Goal</label>
-                        <input id="primeGoal" type="text" class="field" name="primeGoal" size="40" style="height:25px;width:95%">
-                    </span>
-                    <span class="form-field">
-                        <label class="label" for="input-10">Secondary Experiment Goals</label>
-                        <textarea id="secGoals" class="field" name="secGoals" cols="39" rows="5" style="height:60px;"></textarea>
-                    </span>
-                    <span class="form-field">
-                        <label class="label" for="input-10">Tracked Elements</label>
-                        <textarea id="events" class="field" name="gaevents" cols="39" rows="5" style="height:60px;"></textarea>
-                    </span>
-                    <hr class="ucform-breakpoint">
-                    <span class="form-field">
-                        <label class="label" for="input-10">Change Log</label>
-                        <textarea id="changeLog" class="field" name="changelog" cols="39" rows="5" style="height:60px;"></textarea>
-                    </span>
-                    <span class="form-field">
-                        <label class="label" for="input-10">Development Considerations</label>
-                        <textarea id="devCons" class="field" name="devCons" cols="39" rows="5" style="height:60px;"></textarea>
-                    </span>
-                    <span class="form-field">
-                        <label class="label" for="input-10">Test Conflict Consideration</label>
-                        <input id="testConflict" type="text" class="field" name="testConflict" size="40" style="height:25px;">
-                    </span>
-                    <hr class="ucform-breakpoint">
-                    <div class="selectAuthor form-field first-field">
-                        <h3 class="selecttext hypo">Experiment Owner:</h3>
-                        <select id="testOwner" name="testOwner">
-                            <option disabled selected value>-- Select An Option -- </option>
-                            <option value="552d69069defa5f8c3e2a474">Ryan J</option>
-                            <option value="5433d20eb25a1622f11b10b0">David M</option>
-                            <option value="576e699473615ec99053cee0">Hazel B</option>
-                            <option value="564e3854b76df04ea7476d99">Sam G</option>
-                            <option value="5916c69b08b29f80d8f7bd9d">Chris R</option>
-                            <option value="58e8a7225a73325c03c7555d">Sam B</option>
-                            <option value="588469704fe4c31045761b07">Beth L</option>
-                        </select>
-                    </div>
-                    <iframe style="border:none;width:100%;height:465px;" src="https://script.google.com/a/userconversion.com/macros/s/AKfycbw3b1J8RP2iJDeiEkNgdlR-SukKLfTdvWO79FbqVwJYrfBGu_Nq/exec"></iframe>
-                 </div>
+                    <div class="uc_form-content">
+                        <div id="uc_hypothesis" class="hypothesis_form second_section">
+                            <span class="form-field">
+                                <label class="label" for="input-10">Test ID:</label>
+                                <input id="testID" class="field" type="text" value="" name="testID" size="40">
+                                <span class="underfieldtext">This will be assigned automatically based on the ‘next’ ID, but you can change this and assign manually if needed</span>
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Test Name:</label>
+                                <input id="testName" class="field" type="text" name="testName" size="40">
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Number of Variations:</label>
+                                <input name="variations" id="variations" class="field" type="text" size="40" style="height:25px;">
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Traffic % Per variation:</label>
+                                <input id="trafficPercent" type="text" class="field" name="trafficPercent" size="40" style="height:25px;">
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Minimum Detectable effect</label>
+                                <input id="minEffect" class="field" type="text" name="minEffect" size="40" value="5" style="height:25px;">
+                                <span class="MDE-percent">%</span>
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Baseline Conversion Rate</label>
+                                <input id="baseline" type="text" class="field" name="baseline" size="40" style="height:25px;">
+                                <span class="underfieldtext">
+                                    Visit 
+                                    <a href="http://www.evanmiller.org/ab-testing/sample-size.html" target="_blank">
+                                        www.evanmiller.org/ab-testing/sample-size.html <img src="/UCFORM_images/new-tab.png"/>
+                                    </a>
+                                    for more information
+                                </span>
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Required Sample Size</label>
+                                <input id="sampleSize" type="text" class="field" name="sampleSize" size="40" style="height:25px;">
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Estimated Run Length (Days)</label>
+                                <input id="runLength" class="field" name="runLength" cols="39" rows="5">
+                            </span>
+                            <div class="selectDevise form-field first-field">
+                                <h3 class="devices hypo">Please select devices:</h3>
+                                <select id="devices" name="devices">
+                                    <option disabled selected value>-- Select An Option -- </option>
+                                    <option value="Mobile">Mobile</option>
+                                    <option value="Tablet">Tablet</option>
+                                    <option value="Desktop">Desktop</option>
+                                    <option value="Mobile, Desktop">Mobile, Desktop</option>
+                                    <option value="Mobile, Tablet">Mobile, Tablet</option>
+                                    <option value="Tablet, Desktop">Tablet, Desktop</option>
+                                    <option value="Mobile, Tablet, Desktop">Mobile, Tablet, Desktop</option>
+                                </select>
+                            </div>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Targeting Information</label>
+                                <textarea id="targeting" type="text" class="field" name="targeting" cols="39" rows="5" style="height:60px;"></textarea>
+                                <span class="underfieldtext">Page URLS, Regex Information, Exclusions</span>
+                            </span>
+                            <hr class="ucform-breakpoint">
+                            <div class="form-field selectSize first-field">
+                                <h3 class="expSize hypo">Please select size of experiment</h3>
+                                <select id="expSize" name="expSize">
+                                    <option disabled selected value>-- Select An Option -- </option>
+                                    <option value="Small">Small</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Large">Large</option>
+                                </select>
+                                <span class="underfieldtext">What do you estimate the development effort for this experiment to be? Small? Medium? Large?</span>
+                            </div>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Test Hypothesis</label>
+                                <textarea id="testHyp" class="field" name="hypothesis" cols="39" rows="5" style="height:60px;"></textarea>
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Supporting Insights</label>
+                                <textarea id="supportInsights" class="field" name="insights" cols="39" rows="5" style="height:60px;"></textarea>
+                            </span>
+                            <hr class="ucform-breakpoint">
+                            <span class="form-field">
+                                <label class="label" for="input-10">Primary Experiment Goal</label>
+                                <input id="primeGoal" type="text" class="field" name="primeGoal" size="40" style="height:25px;width:95%">
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Secondary Experiment Goals</label>
+                                <textarea id="secGoals" class="field" name="secGoals" cols="39" rows="5" style="height:60px;"></textarea>
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Tracked Elements</label>
+                                <textarea id="events" class="field" name="gaevents" cols="39" rows="5" style="height:60px;"></textarea>
+                            </span>
+                            <hr class="ucform-breakpoint">
+                            <span class="form-field">
+                                <label class="label" for="input-10">Change Log</label>
+                                <textarea id="changeLog" class="field" name="changelog" cols="39" rows="5" style="height:60px;"></textarea>
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Development Considerations</label>
+                                <textarea id="devCons" class="field" name="devCons" cols="39" rows="5" style="height:60px;"></textarea>
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Test Conflict Consideration</label>
+                                <input id="testConflict" type="text" class="field" name="testConflict" size="40" style="height:25px;">
+                            </span>
+                            <hr class="ucform-breakpoint">
+                            <div class="selectAuthor form-field first-field">
+                                <h3 class="selecttext hypo">Experiment Owner:</h3>
+                                <select id="testOwner" name="testOwner">
+                                    <option disabled selected value>-- Select An Option -- </option>
+                                    <option value="552d69069defa5f8c3e2a474">Ryan J</option>
+                                    <option value="5433d20eb25a1622f11b10b0">David M</option>
+                                    <option value="576e699473615ec99053cee0">Hazel B</option>
+                                    <option value="564e3854b76df04ea7476d99">Sam G</option>
+                                    <option value="5916c69b08b29f80d8f7bd9d">Chris R</option>
+                                    <option value="58e8a7225a73325c03c7555d">Sam B</option>
+                                    <option value="588469704fe4c31045761b07">Beth L</option>
+                                </select>
+                            </div>
+                         </div>
 
 
                 <!-- Next test -->
-                <div id="uc_insight" class="insight_form second_section hidden">
-                    <span class="input">
-                        <input id="insightTitle" type="text" class="input__field" name="insightTitle" size="40" style="height:25px;">
-                        <label class="input__label" for="input-10">
-                            <span class="label__content">Insight Title:</span>
-                        </label>
-                    </span>
-                    <span class="input">
-                        <input id="insightOverview" class="input__field" type="text" name="insightOverview" size="40" style="height:25px;">
-                        <label class="input__label" for="input-10">
-                            <span class="label__content">Insight Overview:</span>
-                        </label>
-                    </span>
-                    <span class="input">
-                        <textarea id="researchSummary" class="input__field" name="researchSummary" cols="39" rows="5"></textarea>
-                        <label class="input__label" for="input-10">
-                            <span class="label__content">Research Summary:</span>
-                        </label>
-                    </span>
-                    <span class="input">
-                        <textarea id="GAsummary" class="input__field" name="GAsummary" cols="39" rows="5"></textarea>
-                        <label class="input__label" for="input-10">
-                            <span class="label__content">Analytics Summary:</span>
-                        </label>
-                    </span>
-                    <div class="addPerson">
-                        <h3 class="selecttext">Add Someone To Card?:</h3>
-                        <select id="ResearchOwner" name="ResearchOwner">
-                            <option disabled selected value>-- Select An Option -- </option>
-                            <option value="552d69069defa5f8c3e2a474">Ryan J</option>
-                            <option value="5433d20eb25a1622f11b10b0m">David M</option>
-                            <option value="576e699473615ec99053cee0">Hazel B</option>
-                            <option value="564e3854b76df04ea7476d99">Sam G</option>
-                            <option value="5916c69b08b29f80d8f7bd9d">Chris R</option>
-                            <option value="58e8a7225a73325c03c7555d">Sam B</option>
-                            <option value="588469704fe4c31045761b07">Beth L</option>
-                        </select>
-                    </div>
-                    <div class="radioSection">
-                        <h3 class="selecttext">Schedule a sprint?</h3>
-                        <input type="radio" id="yesSprint1" name="sprint1" value="yes">
-                        <span>Yes</span>
-                        <input type="radio" id="noSprint1" name="sprint1" value="no">
-                        <span>No</span>
-                    </div>
-                </div>
-                <div id="test_idea" class="idea_form second_section hidden">
-                    <span class="input">
-                        <input id="testNameShort" class="input__field" type="text" name="testNameShort" size="40" style="height:25px;">
-                        <label class="input__label" for="input-10">
-                            <span class="label__content">Idea Name:</span>
-                        </label>
-                    </span>
-                    <span class="input">
-                        <textarea id="ideaHyp" class="input__field" name="ideaHyp" cols="39" rows="5"></textarea>
-                        <label class="input__label" for="input-10">
-                            <span class="label__content">Test Idea Overview:</span>
-                        </label>
-                    </span>
-                    <span class="input">
-                        <textarea id="ideaInsight" class="input__field" name="ideaInsight" cols="39" rows="5"></textarea>
-                        <label class="input__label" for="input-10">
-                            <span class="label__content">Supporting Insights:</span>
-                        </label>
-                    </span>
-                    <div class="addPerson">
-                        <h3 class="selecttext">Add Someone To Card?:</h3>
-                        <select id="ResearchOwner" name="ResearchOwner">
-                            <option disabled selected value>-- Select An Option -- </option>
-                            <option value="552d69069defa5f8c3e2a474">Ryan J</option>
-                            <option value="5433d20eb25a1622f11b10b0m">David M</option>
-                            <option value="576e699473615ec99053cee0">Hazel B</option>
-                            <option value="564e3854b76df04ea7476d99">Sam G</option>
-                            <option value="5916c69b08b29f80d8f7bd9d">Chris R</option>
-                            <option value="58e8a7225a73325c03c7555d">Sam B</option>
-                            <option value="588469704fe4c31045761b07">Beth L</option>
-                        </select>
-                    </div>
-                    <div class="radioSection">
-                        <h3 class="selecttext">Schedule a sprint?</h3>
-                        <input type="radio" id="yesSprint2" name="sprint1" value="yes">
-                        <span>Yes</span>
-                        <input type="radio" id="noSprint2" name="sprint1" value="no">
-                        <span>No</span>
-                    </div>
-                </div>
+                
 
-                <!-- SPRINT SECTION -->
-                <div id="uc_sprint_partial" class="half_sprint_form second_section hidden">
-                    <div class="Select">
-                        <h3 class="selecttext">What Stage is the Idea:</h3>
-                        <select id="ideaStage" name="ideaStage">
-                            <option disabled selected value>-- Select An Option -- </option>
-                            <option value="concept">Concept</option>
-                            <option value="supported">Supported</option>
-                            <option value="validated">Validated</option>
-                        </select>
-                    </div>
-                    <span class="form-field">
-                        <label class="label" for="input-10">User Problem:
-                    </span>
-</label><textarea id="userProb" class="input__field" name="userProb" cols="39" rows="5"></textarea>
-</span>
-<span class="input">
-    <textarea id="suppInsights" class="input__field" name="suppInsights" cols="39" rows="5"></textarea>
-    <label class="input__label" for="input-10">
-        <span class="label__content">Supporting Insights:</span>
-    </label>
-</span>
-<div class="sprintSelect">
-    <h3 class="selecttext">Sprint Lead:</h3>
-    <select id="ResearchOwner" name="sprintLead">
-        <option disabled selected value="">-- Select An Option -- </option>
-        <option value="ryanj@userconversion.com">Ryan J</option>
-        <option value="davidm@userconversion.com">David M</option>
-        <option value="hazelb@userconversion.com">Hazel B</option>
-        <option value="samg@userconversion.com">Sam G</option>
-        <option value="chrisr@userconversion.com">Chris R</option>
-        <option value="samb@userconversion.com">Sam B</option>
-        <option value="bethl@userconversion.com">Beth L</option>
-        <option value="lewisn@userconversion.com">Lewis N</option>
-        <option value="rebeccaw@userconversion.com">Rebecca W</option>
-        <option value="scottt@userconversion.com">Scott T</option>
-        <option value="damiand@userconversion.com">Damian D</option>
-        <option value="fayeh@userconversion.com">Faye H</option>
-        <option value="prestond@userconversion.com">Preston D</option>
-        <option value="bilala@userconversion.com">Bilal A</option>
-    </select>
-</div>
-<div class="sprintSelect">
-    <h3 class="selecttext">Strategist:</h3>
-    <select id="ResearchOwner" name="strategist">
-        <option disabled selected value="">-- Select An Option -- </option>
-        <option value="ryanj@userconversion.com">Ryan J</option>
-        <option value="davidm@userconversion.com">David M</option>
-        <option value="bethl@userconversion.com">Beth L</option>
-    </select>
-</div>
-<div class="sprintSelect">
-    <h3 class="selecttext">Additional Member No1:</h3>
-    <select id="AdditionalMember1" name="addMember1">
-        <option disabled selected value="">-- Select An Option -- </option>
-        <option value="ryanj@userconversion.com">Ryan J</option>
-        <option value="davidm@userconversion.com">David M</option>
-        <option value="hazelb@userconversion.com">Hazel B</option>
-        <option value="samg@userconversion.com">Sam G</option>
-        <option value="chrisr@userconversion.com">Chris R</option>
-        <option value="samb@userconversion.com">Sam B</option>
-        <option value="bethl@userconversion.com">Beth L</option>
-        <option value="lewisn@userconversion.com">Lewis N</option>
-        <option value="rebeccaw@userconversion.com">Rebecca W</option>
-        <option value="scottt@userconversion.com">Scott T</option>
-        <option value="damiand@userconversion.com">Damian D</option>
-        <option value="fayeh@userconversion.com">Faye H</option>
-        <option value="prestond@userconversion.com">Preston D</option>
-        <option value="bilala@userconversion.com">Bilal A</option>
-    </select>
-</div>
 
-<span class="input timeDate">
-    <input id="target" class="input__field" type="datetime-local" name="time2" size="40" style="height:25px;">
-    <label class="input__label" for="input-10">
-        <span class="label__content">Sprint Date &amp;Time:</span>
-    </label>
-</span>
 </div>
 
 
 
-<!-- The second form -->
-<div id="uc_sprint" class="sprint_form second_section hidden">
-    <div class="sprintSelect form-field">
-        <h3 class="selectLabel">What Stage is The Idea:</h3>
-        <select id="ideaStage" name="ideaStage">
-            <option disabled selected value>-- Select An Option -- </option>
-            <option value="concept">Concept</option>
-            <option value="supported">Supported</option>
-            <option value="validated">Validated</option>
-        </select>
+                    <div id='success'></div>
+                <button type='submit' class="hidden" id="submitBtn">Send</button>
+            </form>
+            <script type="text/javascript" src="js/Form.js"></script>
+        </div>
     </div>
-    <span class="form-field">
-        <label class="label" for="input-10">User Problem:</label>
-        <textarea id="userProb" class="field" name="userProb2" cols="39" rows="5"></textarea>
-    </span>
-    <span class="form-field">
-        <label class="label" for="input-10">Supporting Insights:</label>
-        <textarea id="suppInsights" class="field" name="suppInsights2" cols="39" rows="5" style="height:60px;"></textarea>
-    </span>
-    <div class="sprintSelect form-field">
-        <h3 class="selectLabel">Sprint Lead:</h3>
-        <select id="ResearchOwner" name="sprintLead">
-            <option disabled selected value="">-- Select An Option -- </option>
-            <option value="ryanj@userconversion.com">Ryan J</option>
-            <option value="davidm@userconversion.com">David M</option>
-            <option value="hazelb@userconversion.com">Hazel B</option>
-            <option value="samg@userconversion.com">Sam G</option>
-            <option value="chrisr@userconversion.com">Chris R</option>
-            <option value="samb@userconversion.com">Sam B</option>
-            <option value="bethl@userconversion.com">Beth L</option>
-            <option value="lewisn@userconversion.com">Lewis N</option>
-            <option value="rebeccaw@userconversion.com">Rebecca W</option>
-            <option value="scottt@userconversion.com">Scott T</option>
-            <option value="damiand@userconversion.com">Damian D</option>
-            <option value="fayeh@userconversion.com">Faye H</option>
-            <option value="prestond@userconversion.com">Preston D</option>
-            <option value="bilala@userconversion.com">Bilal A</option>
-        </select>
-    </div>
-    <br>
-    <div class="sprintSelect form-field">
-        <h3 class="selectLabel">Additional Member No1:</h3>
-        <select id="AdditionalMember2" name="addMember1">
-            <option disabled selected value="">-- Select An Option -- </option>
-            <option value="ryanj@userconversion.com">Ryan J</option>
-            <option value="davidm@userconversion.com">David M</option>
-            <option value="hazelb@userconversion.com">Hazel B</option>
-            <option value="samg@userconversion.com">Sam G</option>
-            <option value="chrisr@userconversion.com">Chris R</option>
-            <option value="samb@userconversion.com">Sam B</option>
-            <option value="bethl@userconversion.com">Beth L</option>
-            <option value="lewisn@userconversion.com">Lewis N</option>
-            <option value="rebeccaw@userconversion.com">Rebecca W</option>
-            <option value="scottt@userconversion.com">Scott T</option>
-            <option value="damiand@userconversion.com">Damian D</option>
-            <option value="fayeh@userconversion.com">Faye H</option>
-            <option value="prestond@userconversion.com">Preston D</option>
-            <option value="bilala@userconversion.com">Bilal A</option>
-        </select>
-    </div>
-    <div class="sprintSelect form-field">
-        <h3 class="selectLabel">Additional Member No2:</h3>
-        <select id="AdditionalMember2" name="addMember2">
-            <option disabled selected value="">-- Select An Option -- </option>
-            <option value="ryanj@userconversion.com">Ryan J</option>
-            <option value="davidm@userconversion.com">David M</option>
-            <option value="hazelb@userconversion.com">Hazel B</option>
-            <option value="samg@userconversion.com">Sam G</option>
-            <option value="chrisr@userconversion.com">Chris R</option>
-            <option value="samb@userconversion.com">Sam B</option>
-            <option value="bethl@userconversion.com">Beth L</option>
-            <option value="lewisn@userconversion.com">Lewis N</option>
-            <option value="rebeccaw@userconversion.com">Rebecca W</option>
-            <option value="scottt@userconversion.com">Scott T</option>
-            <option value="damiand@userconversion.com">Damian D</option>
-            <option value="fayeh@userconversion.com">Faye H</option>
-            <option value="prestond@userconversion.com">Preston D</option>
-            <option value="bilala@userconversion.com">Bilal A</option>
-        </select>
-    </div>
-    <span class="form-field timeDate">
-        <label class="label" for="input-10">Sprint Date:</label>
-        <input id="targetDate" class="field" type="date" name="date" size="40" style="height:25px;">
-    </span>
-    <span class="form-field time">
-        <label class="label" for="input-10">Sprint Time:</label>
-        <!---<input id="target" class="field" type="time" name="time3" size="40" style="height:25px;">-->
-        <select id="targetTime" name="time">
-            <option disabled selected value="">-- Select An Option -- </option>
-            <option value="9.00">9.00</option>
-            <option value="9.30">9.30</option>
-            <option value="10.00">10.00</option>
-            <option value="10.30">10.30</option>
-            <option value="11.00">11.00</option>
-            <option value="11.30">11.30</option>
-            <option value="12.00">12.00</option>
-            <option value="12.30">12.30</option>
-            <option value="13.00">13.00</option>
-            <option value="13.30">13.30</option>
-            <option value="14.00">14.00</option>
-            <option value="14.30">14.30</option>
-            <option value="15.00">15.00</option>
-            <option value="15.00">15.30</option>
-            <option value="16.00">16.00</option>
-        </select>
-        <div class="time-button" name="9.00">9.00</div>
-        <div class="time-button" name="9.30">9.30</div>
-        <div class="time-button" name="10.00">10.00</div>
-        <div class="time-button" name="10.30">10.30</div>
-        <div class="time-button" name="11.00">11.00</div>
-        <div class="time-button" name="11.30">11.30</div>
-        <div class="time-button" name="12.00">12.00</div>
-        <div class="time-button" name="12.30">12.30</div>
-        <div class="time-button" name="13.00">13.00</div>
-        <div class="time-button" name="13.30">13.30</div>
-        <div class="time-button" name="14.00">14.00</div>
-        <div class="time-button" name="14.30">14.30</div>
-        <div class="time-button" name="15.00">15.00</div>
-        <div class="time-button" name="15.30">15.30</div>
-        <div class="time-button" name="16.00">16.00</div>
-    </span>
-</div>
-<div id='success'></div>
-<button type='submit' class="hidden" id="submitBtn">Send</button>
-</form></div><script type="text/javascript" src="js/Form.js"></script>
-</div></div></br></div></body></html>
+  </body>
+</html>

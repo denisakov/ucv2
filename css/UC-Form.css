@@ -358,15 +358,21 @@
     }
     
     .form-field .label{
-    text-transform: uppercase;
-    font-size: 1.3em;
-    display: block;
-    margin: 10px;
-    margin-left: 0;
-    text-align: left;
-    color: #374b52;
-    font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1.3em;
+        display: block;
+        margin: 10px;
+        margin-left: 0;
+        text-align: left;
+        color: #374b52;
+        font-weight: bold;
     }
+
+    .form-field .required{
+        color: #ea1c1c;
+        margin-left: 3px;
+    }
+
     
     .second_section .field, select {
     background-color: #fff;
