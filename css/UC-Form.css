@@ -468,7 +468,11 @@
     }
 
     input#testName,
-    input#sampleSize {
+    input#sampleSize,
+    input#testExpect,
+    input#testChange,
+    input#testMethod,
+    input#testObserve {
     width: 97%;
     }
     

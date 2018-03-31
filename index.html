@@ -109,10 +109,21 @@
                             <hr class="ucform-breakpoint">
                             <div class="header">Hypothesis</div>
                             <span class="form-field">
-                                <label class="label" for="input-10">Estimated Run Length (Days)</label>
-                                <input id="runLength" class="field" name="runLength" cols="39" rows="5">
+                                <label class="label" for="input-10">Since we observed that...</label>
+                                <textarea id="testObserve" class="field" name="observation" cols="39" rows="5" style="height:60px;" placeholder="What is the user problem?"></textarea>
                             </span>
-                            
+                            <span class="form-field">
+                                <label class="label" for="input-10">By...</label>
+                                <textarea id="testMethod" class="field" name="method" cols="39" rows="5" style="height:60px;" placeholder="Observation method"></textarea>
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">We want to...</label>
+                                <textarea id="testChange" class="field" name="change" cols="39" rows="5" style="height:60px;" placeholder="Make this change"></textarea>
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Which should lead to...</label>
+                                <textarea id="testExpect" class="field" name="expect" cols="39" rows="5" style="height:60px;" placeholder="Desired change in behaviour"></textarea>
+                            </span>
                             <hr class="ucform-breakpoint">
                             <div class="header">Metrics</div>
                             <span class="form-field">
@@ -186,8 +197,28 @@
                                 <label class="label" for="input-10">Test Conflict Consideration</label>
                                 <input id="testConflict" type="text" class="field" name="testConflict" size="40" style="height:25px;">
                             </span>
-                            <hr class="ucform-breakpoint">
+                            
 
+                            <hr class="ucform-breakpoint">
+                            <div class="selectAuthor form-field first-field">
+                                <h3 class="selecttext hypo">Experiment Owner:</h3>
+                                <select id="testOwner" name="testOwner">
+                                    <option disabled selected value>-- Select An Option -- </option>
+                                    <option value="552d69069defa5f8c3e2a474">Ryan J</option>
+                                    <option value="5433d20eb25a1622f11b10b0">David M</option>
+                                    <option value="576e699473615ec99053cee0">Hazel B</option>
+                                    <option value="564e3854b76df04ea7476d99">Sam G</option>
+                                    <option value="5916c69b08b29f80d8f7bd9d">Chris R</option>
+                                    <option value="58e8a7225a73325c03c7555d">Sam B</option>
+                                    <option value="588469704fe4c31045761b07">Beth L</option>
+                                </select>
+                            </div>
+                            <hr class="ucform-breakpoint">
+                            <div class="header">Extras</div>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Estimated Run Length (Days)</label>
+                                <input id="runLength" class="field" name="runLength" cols="39" rows="5">
+                            </span>
                             <div class="form-field selectSize first-field">
                                 <h3 class="expSize hypo">Please select size of experiment</h3>
                                 <select id="expSize" name="expSize">
@@ -206,22 +237,6 @@
                                 <label class="label" for="input-10">Supporting Insights</label>
                                 <textarea id="supportInsights" class="field" name="insights" cols="39" rows="5" style="height:60px;"></textarea>
                             </span>
-                            
-                            
-                            <hr class="ucform-breakpoint">
-                            <div class="selectAuthor form-field first-field">
-                                <h3 class="selecttext hypo">Experiment Owner:</h3>
-                                <select id="testOwner" name="testOwner">
-                                    <option disabled selected value>-- Select An Option -- </option>
-                                    <option value="552d69069defa5f8c3e2a474">Ryan J</option>
-                                    <option value="5433d20eb25a1622f11b10b0">David M</option>
-                                    <option value="576e699473615ec99053cee0">Hazel B</option>
-                                    <option value="564e3854b76df04ea7476d99">Sam G</option>
-                                    <option value="5916c69b08b29f80d8f7bd9d">Chris R</option>
-                                    <option value="58e8a7225a73325c03c7555d">Sam B</option>
-                                    <option value="588469704fe4c31045761b07">Beth L</option>
-                                </select>
-                            </div>
                          </div>
                     </div>
 
