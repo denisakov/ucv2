@@ -238,8 +238,6 @@
     
     .second_section {
     background: white;
-    margin-top: 10px;
-    padding: 27px;
     }
     
     .top-fields {
@@ -342,8 +340,16 @@
     #uc_sprint_partial {
     border-top: 10px solid #f3f1f1;
     }
-    
-    
+    /* HEADER */
+    div.header{
+        text-transform: uppercase;
+        font-size: 1.5em;
+        display: block;
+        margin: 50px 0 30px 0;
+        text-align: center;
+        color: #2AB4EE;
+        font-weight: bold;
+    }
     
     /*INPUTS*/
     
@@ -421,6 +427,12 @@
     margin-top: 10px;
     color: #86969c;
     }
+    span.underfieldtext.sidetext {
+    display: block;
+    font-size: 14px;
+    margin-left: 40%;
+    color: #86969c;
+    }
     
     span.underfieldtext a{
         color: #2ab4ee;
@@ -434,8 +446,9 @@
     /*indivdiual sizes*/
     
     input#testID {
-    width: 50%;
+    width: 30%;
     text-align: left;
+    float:left;
     }
     
     input#testName {
@@ -478,8 +491,8 @@
     
     .ucform-breakpoint {
         border: 3px solid #2AB4EE;
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin-top: 20px;
+        margin-bottom: 30px;
     }
     
     .addgoalbutton,

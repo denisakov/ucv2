@@ -109,30 +109,6 @@
                             <hr class="ucform-breakpoint">
                             <div class="header">Hypothesis</div>
                             <span class="form-field">
-                                <label class="label" for="input-10">Estimated Run Length (Days)</label>
-                                <input id="runLength" class="field" name="runLength" cols="39" rows="5">
-                            </span>
-                            <div class="selectDevise form-field first-field">
-                                <h3 class="devices hypo">Please select devices:</h3>
-                                <select id="devices" name="devices">
-                                    <option disabled selected value>-- Select An Option -- </option>
-                                    <option value="Mobile">Mobile</option>
-                                    <option value="Tablet">Tablet</option>
-                                    <option value="Desktop">Desktop</option>
-                                    <option value="Mobile, Desktop">Mobile, Desktop</option>
-                                    <option value="Mobile, Tablet">Mobile, Tablet</option>
-                                    <option value="Tablet, Desktop">Tablet, Desktop</option>
-                                    <option value="Mobile, Tablet, Desktop">Mobile, Tablet, Desktop</option>
-                                </select>
-                            </div>
-                            <span class="form-field">
-                                <label class="label" for="input-10">Targeting Information</label>
-                                <textarea id="targeting" type="text" class="field" name="targeting" cols="39" rows="5" style="height:60px;"></textarea>
-                                <span class="underfieldtext">Page URLS, Regex Information, Exclusions</span>
-                            </span>
-                            <hr class="ucform-breakpoint">
-                            <div class="header">Sample Size</div>
-                            <span class="form-field">
                                 <label class="label" for="input-10">Number of Variations:</label>
                                 <input name="variations" id="variations" class="field" type="text" size="40" style="height:25px;">
                             </span>
@@ -160,9 +136,29 @@
                                 <label class="label" for="input-10">Required Sample Size</label>
                                 <input id="sampleSize" type="text" class="field" name="sampleSize" size="40" style="height:25px;">
                             </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Estimated Run Length (Days)</label>
+                                <input id="runLength" class="field" name="runLength" cols="39" rows="5">
+                            </span>
+                            <div class="selectDevise form-field first-field">
+                                <h3 class="devices hypo">Please select devices:</h3>
+                                <select id="devices" name="devices">
+                                    <option disabled selected value>-- Select An Option -- </option>
+                                    <option value="Mobile">Mobile</option>
+                                    <option value="Tablet">Tablet</option>
+                                    <option value="Desktop">Desktop</option>
+                                    <option value="Mobile, Desktop">Mobile, Desktop</option>
+                                    <option value="Mobile, Tablet">Mobile, Tablet</option>
+                                    <option value="Tablet, Desktop">Tablet, Desktop</option>
+                                    <option value="Mobile, Tablet, Desktop">Mobile, Tablet, Desktop</option>
+                                </select>
+                            </div>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Targeting Information</label>
+                                <textarea id="targeting" type="text" class="field" name="targeting" cols="39" rows="5" style="height:60px;"></textarea>
+                                <span class="underfieldtext">Page URLS, Regex Information, Exclusions</span>
+                            </span>
                             <hr class="ucform-breakpoint">
-                            <div class="header">The details</div>
-
                             <div class="form-field selectSize first-field">
                                 <h3 class="expSize hypo">Please select size of experiment</h3>
                                 <select id="expSize" name="expSize">
