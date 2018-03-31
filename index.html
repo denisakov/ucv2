@@ -87,7 +87,7 @@
                             <option value="Hypothesis Document">Hypothesis Document</option>
                             <option value="Experiment Sprint">Experiment Sprint</option>
                         </select>
-                        
+
                         <input id="pulledTestID" type="hidden" name="pulledTestID" value="">
                         <input id="listID" type="hidden" name="listID" value="">
                         <input id="boardID" type="hidden" name="boardID" value="">
@@ -112,6 +112,23 @@
                                 <label class="label" for="input-10">Estimated Run Length (Days)</label>
                                 <input id="runLength" class="field" name="runLength" cols="39" rows="5">
                             </span>
+                            
+                            <hr class="ucform-breakpoint">
+                            <div class="header">Metrics</div>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Primary Experiment Goal</label>
+                                <input id="primeGoal" type="text" class="field" name="primeGoal" size="40" style="height:25px;width:95%">
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Secondary Experiment Goals</label>
+                                <textarea id="secGoals" class="field" name="secGoals" cols="39" rows="5" style="height:60px;"></textarea>
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Tracked Elements</label>
+                                <textarea id="events" class="field" name="gaevents" cols="39" rows="5" style="height:60px;"></textarea>
+                            </span>
+                            <hr class="ucform-breakpoint">
+                            <div class="header">Targeting</div>
                             <div class="selectDevise form-field first-field">
                                 <h3 class="devices hypo">Please select devices:</h3>
                                 <select id="devices" name="devices">
@@ -133,21 +150,20 @@
                             <hr class="ucform-breakpoint">
                             <div class="header">Sample Size</div>
                             <span class="form-field">
-                                <label class="label" for="input-10">Number of Variations:</label>
-                                <input name="variations" id="variations" class="field" type="text" size="40" style="height:25px;">
+                                    <label class="label" id="sideBySide" for="input-10">Number of Variations:</label>
+                                    <label class="label" id="sideBySide" for="input-10">Traffic % Per variation:</label>
+                                    <input id="sideBySide" class="field" type="text" name="variations" size="40" style="height:25px;">
+                                    <input id="sideBySide" type="text" class="field" name="trafficPercent" size="40" style="height:25px;">
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">Traffic % Per variation:</label>
-                                <input id="trafficPercent" type="text" class="field" name="trafficPercent" size="40" style="height:25px;">
+                                    <label class="label" id="sideBySide" for="input-10">Minimum Detectable effect %</label>
+                                    <label class="label" id="sideBySide" for="input-10">Baseline Conversion Rate</label>
+                                    <input id="sideBySide" class="field" type="text" name="minEffect" size="40" value="5" style="height:25px;">
+                                    <input id="sideBySide" type="text" class="field" name="baseline" size="40" style="height:25px;">
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">Minimum Detectable effect</label>
-                                <input id="minEffect" class="field" type="text" name="minEffect" size="40" value="5" style="height:25px;">
-                                <span class="MDE-percent">%</span>
-                            </span>
-                            <span class="form-field">
-                                <label class="label" for="input-10">Baseline Conversion Rate</label>
-                                <input id="baseline" type="text" class="field" name="baseline" size="40" style="height:25px;">
+                                <label class="label" for="input-10">Required Sample Size</label>
+                                <input id="sampleSize" type="text" class="field" name="sampleSize" style="height:25px;">
                                 <span class="underfieldtext">
                                     Visit 
                                     <a href="http://www.evanmiller.org/ab-testing/sample-size.html" target="_blank">
@@ -156,12 +172,21 @@
                                     for more information
                                 </span>
                             </span>
-                            <span class="form-field">
-                                <label class="label" for="input-10">Required Sample Size</label>
-                                <input id="sampleSize" type="text" class="field" name="sampleSize" size="40" style="height:25px;">
-                            </span>
                             <hr class="ucform-breakpoint">
                             <div class="header">The details</div>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Change Log</label>
+                                <textarea id="changeLog" class="field" name="changelog" cols="39" rows="5" style="height:60px;"></textarea>
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Development Considerations</label>
+                                <textarea id="devCons" class="field" name="devCons" cols="39" rows="5" style="height:60px;"></textarea>
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Test Conflict Consideration</label>
+                                <input id="testConflict" type="text" class="field" name="testConflict" size="40" style="height:25px;">
+                            </span>
+                            <hr class="ucform-breakpoint">
 
                             <div class="form-field selectSize first-field">
                                 <h3 class="expSize hypo">Please select size of experiment</h3>
@@ -181,32 +206,8 @@
                                 <label class="label" for="input-10">Supporting Insights</label>
                                 <textarea id="supportInsights" class="field" name="insights" cols="39" rows="5" style="height:60px;"></textarea>
                             </span>
-                            <hr class="ucform-breakpoint">
-                            <span class="form-field">
-                                <label class="label" for="input-10">Primary Experiment Goal</label>
-                                <input id="primeGoal" type="text" class="field" name="primeGoal" size="40" style="height:25px;width:95%">
-                            </span>
-                            <span class="form-field">
-                                <label class="label" for="input-10">Secondary Experiment Goals</label>
-                                <textarea id="secGoals" class="field" name="secGoals" cols="39" rows="5" style="height:60px;"></textarea>
-                            </span>
-                            <span class="form-field">
-                                <label class="label" for="input-10">Tracked Elements</label>
-                                <textarea id="events" class="field" name="gaevents" cols="39" rows="5" style="height:60px;"></textarea>
-                            </span>
-                            <hr class="ucform-breakpoint">
-                            <span class="form-field">
-                                <label class="label" for="input-10">Change Log</label>
-                                <textarea id="changeLog" class="field" name="changelog" cols="39" rows="5" style="height:60px;"></textarea>
-                            </span>
-                            <span class="form-field">
-                                <label class="label" for="input-10">Development Considerations</label>
-                                <textarea id="devCons" class="field" name="devCons" cols="39" rows="5" style="height:60px;"></textarea>
-                            </span>
-                            <span class="form-field">
-                                <label class="label" for="input-10">Test Conflict Consideration</label>
-                                <input id="testConflict" type="text" class="field" name="testConflict" size="40" style="height:25px;">
-                            </span>
+                            
+                            
                             <hr class="ucform-breakpoint">
                             <div class="selectAuthor form-field first-field">
                                 <h3 class="selecttext hypo">Experiment Owner:</h3>

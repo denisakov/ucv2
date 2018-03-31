@@ -446,22 +446,39 @@
     /*indivdiual sizes*/
     
     input#testID {
-    width: 30%;
-    text-align: left;
-    float:left;
+        width: 30%;
+        text-align: left;
+        float:left;
     }
-    
-    input#testName {
+
+    input#sideBySide, label#sideBySide {
+        width: 40%;
+        text-align: left;
+        float:left;
+        margin-right: 10%;
+        
+    }
+    label#sideBySide{
+        font-size: 1.3em;
+    }
+    input#sideBySide {
+        width: 30%;
+        margin-right: 15%;
+        margin-bottom: 20px;
+    }
+
+    input#testName,
+    input#sampleSize {
     width: 97%;
     }
     
-    input#variations,
+    /*input#variations,
     input#trafficPercent,
     input#baseline,
     input#runLength,
     input#minEffect {
     width: 8%;
-    }
+    }*/
 
     input#minEffect{
         display: inline-block;
