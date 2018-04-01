@@ -142,37 +142,42 @@
         });
 
 	});
-
-	//Show and Hide the Relevant Forms
-	$('#uc_generator .documentSelect').change(function () {
-		var selectedOption = $('#uc_generator .documentSelect').val();
-		if (selectedOption === "Hypothesis Document") {
-			$('.hypothesis_form').slideDown('200').addClass('active');
-			$('.idea_form').slideUp('200').removeClass('active');
-			$('.half_sprint_form').slideUp('200').removeClass('active');
-			$('.insight_form').slideUp('200').removeClass('active');
-			$('.sprint_form').slideUp('200').removeClass('active');
+	$('#uc_generator .clientSelect').change(function () {
+		var selectedOption = $('#uc_generator .clientSelect').val();
+		if (selectedOption != "-- Select An Option --") {
 			query("select D", 'getId');
-		} else if (selectedOption === "Test Idea") {
-			$('.idea_form').slideDown('200').addClass('active');
-			$('.hypothesis_form').slideUp('200').removeClass('active');
-			$('.insight_form').slideUp('200').removeClass('active');
-			$('.sprint_form').slideUp('200').removeClass('active');
-			$('.half_sprint_form').slideUp('200').removeClass('active');
-		} else if (selectedOption === "Client Insight") {
-			$('.insight_form').slideDown('200').addClass('active');
-			$('.hypothesis_form').slideUp('200').removeClass('active');
-			$('.idea_form').slideUp('200').removeClass('active');
-			$('.sprint_form').slideUp('200').removeClass('active');
-			$('.half_sprint_form').slideUp('200').removeClass('active');
-		} else if (selectedOption === "Experiment Sprint") {
-			$('.sprint_form').slideDown('200').addClass('active');
-			$('.hypothesis_form').slideUp('200').removeClass('active');
-			$('.idea_form').slideUp('200').removeClass('active');
-			$('.insight_form').slideUp('200').removeClass('active');
-			$('.half_sprint_form').slideUp('200').removeClass('active');
 		}
 	});
+	//Show and Hide the Relevant Forms
+	// $('#uc_generator .documentSelect').change(function () {
+	// 	var selectedOption = $('#uc_generator .documentSelect').val();
+	// 	if (selectedOption === "Hypothesis Document") {
+	// 		$('.hypothesis_form').slideDown('200').addClass('active');
+	// 		$('.idea_form').slideUp('200').removeClass('active');
+	// 		$('.half_sprint_form').slideUp('200').removeClass('active');
+	// 		$('.insight_form').slideUp('200').removeClass('active');
+	// 		$('.sprint_form').slideUp('200').removeClass('active');
+	// 		query("select D", 'getId');
+	// 	} else if (selectedOption === "Test Idea") {
+	// 		$('.idea_form').slideDown('200').addClass('active');
+	// 		$('.hypothesis_form').slideUp('200').removeClass('active');
+	// 		$('.insight_form').slideUp('200').removeClass('active');
+	// 		$('.sprint_form').slideUp('200').removeClass('active');
+	// 		$('.half_sprint_form').slideUp('200').removeClass('active');
+	// 	} else if (selectedOption === "Client Insight") {
+	// 		$('.insight_form').slideDown('200').addClass('active');
+	// 		$('.hypothesis_form').slideUp('200').removeClass('active');
+	// 		$('.idea_form').slideUp('200').removeClass('active');
+	// 		$('.sprint_form').slideUp('200').removeClass('active');
+	// 		$('.half_sprint_form').slideUp('200').removeClass('active');
+	// 	} else if (selectedOption === "Experiment Sprint") {
+	// 		$('.sprint_form').slideDown('200').addClass('active');
+	// 		$('.hypothesis_form').slideUp('200').removeClass('active');
+	// 		$('.idea_form').slideUp('200').removeClass('active');
+	// 		$('.insight_form').slideUp('200').removeClass('active');
+	// 		$('.half_sprint_form').slideUp('200').removeClass('active');
+	// 	}
+	// });
 
 
 
@@ -217,23 +222,23 @@
 	}
 
 	//Show Sprint Forms
-	$('#yesSprint1').click(function () {
-		$('.half_sprint_form').slideDown('200').addClass('active');
-	});
+	// $('#yesSprint1').click(function () {
+	// 	$('.half_sprint_form').slideDown('200').addClass('active');
+	// });
 
 
-	$('#yesSprint2').click(function () {
-		$('.half_sprint_form').slideDown('200').addClass('active');
-	});
+	// $('#yesSprint2').click(function () {
+	// 	$('.half_sprint_form').slideDown('200').addClass('active');
+	// });
 
-	$('#noSprint1').click(function () {
-		$('.half_sprint_form').slideUp('200').removeClass('active');
-	});
+	// $('#noSprint1').click(function () {
+	// 	$('.half_sprint_form').slideUp('200').removeClass('active');
+	// });
 
 
-	$('#noSprint2').click(function () {
-		$('.half_sprint_form').slideUp('200').removeClass('active');
-	});
+	// $('#noSprint2').click(function () {
+	// 	$('.half_sprint_form').slideUp('200').removeClass('active');
+	// });
 
 	//document.getElementById("uc_generator").reset();
 
@@ -490,12 +495,12 @@
 	// });
 
 	var updateThisClientData = function () {
-		var docType = $('#docType').val();
+		//var docType = $('#docType').val();
 		var client = $('#clientName1').val();
-		if (docType && client) { // Only run if both the doc type and client have been selected
+		if (client) {
 			thisClientData.name = client;
 			thisClientData.data = clientData[client];
-			thisClientData.docType = docType;
+			//thisClientData.docType = docType;
 			thisClientData.prefix = clientData[client].prefix;
 			// $('#testID').value = clientData[client].prefix;
 			// console.log('Prefix assiged: ' + $('#testID').val());
@@ -510,7 +515,7 @@
 	};
 
 	// On change, if both inputs have been selected, update hidden inputs
-	$('#docType, #clientName1').change(updateThisClientData);
+	$('#clientName1').change(updateThisClientData);
 
 	function clearForm() {
 		$('#uc_generator')[0].reset();
