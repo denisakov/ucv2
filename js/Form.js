@@ -30,18 +30,15 @@
 			dataType: 'jsonp',
 			data: serializedData
 		});
-
 		// Callback handler that will be called on success
 		request.done(function (response, textStatus, jqXHR) {
 			// Log a message to the console
 		});
-
 		// Callback handler that will be called on failure
 		request.fail(function (jqXHR, textStatus, errorThrown) {
 			// Log the error to the console
 
 		});
-
 		// Callback handler that will be called regardless
 		// if the request failed or succeeded
 		request.always(function (response) {
@@ -49,7 +46,6 @@
 			$inputs.prop("disabled", false);
 			console.log(response.result + ". Row " + response.row + " was created.");
 		});
-
 		// Prevent default posting of form
 		if (event) event.preventDefault();
 	};
