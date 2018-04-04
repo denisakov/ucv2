@@ -87,6 +87,7 @@
                         <input id="listID" type="hidden" name="listID" value="">
                         <input id="boardID" type="hidden" name="boardID" value="">
                         <input id="prefix" type="hidden" name="prefix" value="">
+                        <input id="docType" type="hidden" name="docType" value="">
                         <br>
                         <br>
                     </div>
@@ -169,8 +170,12 @@
                                     <input id="sideBySide" type="text" class="field" name="baseline" size="40" style="height:25px;">
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">Required Sample Size</label>
-                                <input id="sampleSize" type="text" class="field" name="sampleSize" style="height:25px;">
+                                <label class="label" for="input-10" id="sideBySide">Estimated Run Length (Days)</label>
+                                <label class="label" for="input-10" id="sideBySide">Required Sample Size</label>
+                                <input id="sideBySide" class="field" name="runLength" cols="39" rows="5">
+                                <input id="sideBySide" type="text" class="field" name="sampleSize" style="height:25px;">
+                            </span>
+                            <span class="form-field">
                                 <span class="underfieldtext">
                                     Visit 
                                     <a href="http://www.evanmiller.org/ab-testing/sample-size.html" target="_blank">
@@ -193,8 +198,6 @@
                                 <label class="label" for="input-10">Test Conflict Consideration</label>
                                 <input id="testConflict" type="text" class="field" name="testConflict" size="40" style="height:25px;">
                             </span>
-                            
-
                             <hr class="ucform-breakpoint">
                             <div class="selectAuthor form-field first-field">
                                 <h3 class="selecttext hypo">Experiment Owner:</h3>
@@ -207,14 +210,18 @@
                                     <option value="5916c69b08b29f80d8f7bd9d">Chris R</option>
                                     <option value="58e8a7225a73325c03c7555d">Sam B</option>
                                     <option value="588469704fe4c31045761b07">Beth L</option>
+                                    <option value="5a1ed4ffd76a14a4dde755f8">Olivia G</option>
+                                    <option value="59e72036c144e33a07a6a5a4">Carrie E</option>
+                                    <option value="59b2549dbd69c053dfb0f0d6">Rob K</option>
+                                    <option value="5a3d8d7ae51ffa427e52db9f">Chris W</option>
+                                    <option value="5a73afd8bc45742231a674a4">Dan R</option>
+                                    <option value="52d7c2672d2b4e43773a6d45">Ammo S</option>
+                                    <option value="5aa38a42e615c70e3f853c36">Alex P</option>
                                 </select>
                             </div>
-                            <hr class="ucform-breakpoint">
+                            <!-- <hr class="ucform-breakpoint">
                             <div class="header">Extras</div>
-                            <span class="form-field">
-                                <label class="label" for="input-10">Estimated Run Length (Days)</label>
-                                <input id="runLength" class="field" name="runLength" cols="39" rows="5">
-                            </span>
+
                             <div class="form-field selectSize first-field">
                                 <h3 class="expSize hypo">Please select size of experiment</h3>
                                 <select id="expSize" name="expSize">
@@ -232,14 +239,13 @@
                             <span class="form-field">
                                 <label class="label" for="input-10">Supporting Insights</label>
                                 <textarea id="supportInsights" class="field" name="insights" cols="39" rows="5" style="height:60px;"></textarea>
-                            </span>
+                            </span> -->
                          </div>
                     </div>
-
-
-
                     <div id='success'></div>
-                <button type='submit' id="submitBtn">Send</button>
+                    <div class="center">
+                        <button type='submit' id="submitBtn">Send</button>
+                    </div>
             </form>
             <script type="text/javascript" src="js/Form.js"></script>
         </div>

@@ -136,7 +136,11 @@
         border-color: #2AB4EE;
         color: #2AB4EE;
     }
-    
+    .center {
+        margin: auto;
+        width: 50%;
+        text-align:center;
+    }
     hr {
     width: 27px;
     border: 2px solid #2AB4EE;

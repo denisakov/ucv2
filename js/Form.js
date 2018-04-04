@@ -126,8 +126,8 @@
 	$('.uc-typeButton').each(function () {
         var value = $(this).val();
         $(this).click(function () {
-		$(this).find('.uctopradio').prop('checked',true);
-		var name = $(this).attr('name');
+			$(this).find('.uctopradio').prop('checked',true);
+			var name = $(this).attr('name');
             $('#yesSprint2')[0].checked = false;
             $('#yesSprint1')[0].checked = false;
             $('#noSprint1')[0].checked = false;
@@ -500,7 +500,7 @@
 		if (client) {
 			thisClientData.name = client;
 			thisClientData.data = clientData[client];
-			//thisClientData.docType = docType;
+			thisClientData.docType = 'Hypothesis Document';
 			thisClientData.prefix = clientData[client].prefix;
 			// $('#testID').value = clientData[client].prefix;
 			// console.log('Prefix assiged: ' + $('#testID').val());
@@ -519,20 +519,20 @@
 
 	function clearForm() {
 		$('#uc_generator')[0].reset();
-		$('.hypothesis_form').removeClass('active');
-		$('.idea_form').removeClass('active');
-		$('.half_sprint_form').removeClass('active');
-		$('.insight_form').removeClass('active');
-		$('.sprint_form').removeClass('active');
-		$('#submitBtn')[0].disabled;
-		$('#submitBtn').prop('disabled', false);
-		$('#submitBtn').addClass('hidden');
-		$('.uc-typeButton').removeClass('active');
-		$('.second_section').slideUp('200');
-		$('#yesSprint2')[0].checked = false;
-		$('#yesSprint1')[0].checked = false;
-		$('#noSprint1')[0].checked = false;
-		$('#noSprint2')[0].checked = false;
+		// $('.hypothesis_form').removeClass('active');
+		// $('.idea_form').removeClass('active');
+		// $('.half_sprint_form').removeClass('active');
+		// $('.insight_form').removeClass('active');
+		// $('.sprint_form').removeClass('active');
+		// $('#submitBtn')[0].disabled;
+		// $('#submitBtn').prop('disabled', false);
+		// $('#submitBtn').addClass('hidden');
+		// $('.uc-typeButton').removeClass('active');
+		// $('.second_section').slideUp('200');
+		// $('#yesSprint2')[0].checked = false;
+		// $('#yesSprint1')[0].checked = false;
+		// $('#noSprint1')[0].checked = false;
+		// $('#noSprint2')[0].checked = false;
 
 		var $filled = $('.input--filled');
 		if ($filled.length) {
@@ -551,6 +551,7 @@
 		$('#listID').val(listId);
 		$('#boardID').val(boardId);
 		$('#prefix').val(prefix);
+		$('#docType').val(docType);
 
 		/* If Hypothesis Document make sure generated ID exists and selected client id matches generated ID */
 		// if (thisClientData.docType === 'Hypothesis Document') {
@@ -567,7 +568,7 @@
 
 		formSubmit();
 
-		$("#submitBtn").prop('disabled', true);
+		// $("#submitBtn").prop('disabled', true);
 
 		setTimeout(function () {
 
