@@ -352,12 +352,12 @@
 		add 1 to this number to generate ID for this test */
 		for (var i = data.length; i >= 0; i--) {
 			var idObj = data[i];
-			/* if this row is an object containing a non-empty string, 
+			/* if this row is an object containing a non-empty string,
 			extract the number and increment on it */
 			if (typeof idObj === 'object') {
 				var id = idObj["testID"] || idObj[""];
 				if (id && id !== 'undefined') {
-					/* Data will return all IDs for all clients, so make sure we only 
+					/* Data will return all IDs for all clients, so make sure we only
 					increment on the last ID starting with this client prefix. */
 					var idPrefix = id.match(/\w{2}/);
 					if (idPrefix) idPrefix = idPrefix[0];
