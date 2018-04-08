@@ -549,7 +549,27 @@
         background: #2ab4ee;
         color: white;
     }
-    
+    #overlay {
+         visibility: hidden;
+         position: absolute;
+         left: 0px;
+         top: 0px;
+         width:100%;
+         height:100%;
+         text-align:center;
+         z-index: 1000;
+         background-color: #eaeaea;
+    }
+    #overlay div {
+         width:300px;
+         margin: 100px auto;
+         background-color: #2ab4ee;
+         border:2px solid #fff;
+         padding:15px;
+         border-radius: 10px;
+         text-align:center;
+         font-size:16px;
+    }
     
     /*animated fields
     

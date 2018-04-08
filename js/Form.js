@@ -32,24 +32,27 @@
 		});
 		// Callback handler that will be called on success
 		request.done(function (response, textStatus, jqXHR) {
-			// Log a message to the console
+
 		});
 		// Callback handler that will be called on failure
 		request.fail(function (jqXHR, textStatus, errorThrown) {
 			// Log the error to the console
-
 		});
 		// Callback handler that will be called regardless
 		// if the request failed or succeeded
 		request.always(function (response) {
 			// Reenable the inputs
 			$inputs.prop("disabled", false);
-			console.log(response.result + ". Row " + response.row + " was created.");
+			console.log('We can only presume that data was submitted');
 		});
 		// Prevent default posting of form
 		if (event) event.preventDefault();
 	};
-
+	//show confirmation modal
+	function overlay() {
+		el = document.getElementById("overlay");
+		el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+	}
 	// Google Sheets Helper Functions
 	var jsonp = function (url) {
 		var script = window.document.createElement('script');
@@ -418,8 +421,11 @@
 		$('#prefix').val(prefix);
 		$('#docType').val(docType);
 		formSubmit();
+		$('body, html').animate({scrollTop:$('div.container').offset().top}, 'slow');
+		clearForm();
+		overlay();
 		setTimeout(function () {
-			clearForm();
-		}, 500)
+			overlay();
+		}, 3000)
 	});
 })();
