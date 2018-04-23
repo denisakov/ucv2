@@ -106,7 +106,7 @@
                             </span>
                             <span class="form-field">
                                 <label class="label" for="input-10">Test Name:</label>
-                                <input id="testName" class="field" type="text" name="testName" size="40">
+                                <input id="testName" class="field" type="text" name="testName" size="39">
                             </span>
                             <span class="form-field">
                                 <label class="label" for="input-10">Description:</label>
@@ -131,11 +131,15 @@
                                 <label class="label" for="input-10">Which should lead to...</label>
                                 <textarea id="testExpect" class="field" name="expect" cols="39" rows="5" style="height:60px;" placeholder="Desired change in behaviour"></textarea>
                             </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Supporting Insights</label>
+                                <textarea id="supportInsights" class="field" name="insights" cols="39" rows="5" style="height:60px;"></textarea>
+                            </span>
                             <hr class="ucform-breakpoint">
                             <div class="header">Metrics</div>
                             <span class="form-field">
                                 <label class="label" for="input-10">Primary Experiment Goal</label>
-                                <input id="primeGoal" type="text" class="field" name="primeGoal" size="40" style="height:25px;width:95%">
+                                <input id="primeGoal" type="text" class="field" name="primeGoal" size="39" style="height:25px;width:95%">
                             </span>
                             <span class="form-field">
                                 <label class="label" for="input-10">Secondary Experiment Goals</label>
@@ -180,10 +184,14 @@
                                     <input id="sideBySide" type="text" class="field" name="baseline" size="40" style="height:25px;">
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10" id="sideBySide">Estimated Run Length (Days)</label>
+                                <label class="label" for="input-10">Baseline primary metric info</label>
+                                <input id="baselineInfo" type="text" class="field" name="baselineInfo" size="40" style="height:25px;width:95%">
+                            </span>
+                            <span class="form-field">
                                 <label class="label" for="input-10" id="sideBySide">Required Sample Size</label>
-                                <input id="sideBySide" class="field" name="runLength" cols="39" rows="5">
-                                <input id="sideBySide" type="text" class="field" name="sampleSize" style="height:25px;">
+                                <label class="label" for="input-10" id="sideBySide">Estimated Run Length (Days)</label>
+                                <input id="sideBySide" type="text" class="field" name="sampleSize" size="40" style="height:25px;">
+                                <input id="sideBySide" class="field" name="runLength" size="40" style="height:25px;">
                             </span>
                             <span class="form-field">
                                 <span class="underfieldtext">
@@ -193,6 +201,10 @@
                                     </a>
                                     for more information
                                 </span>
+                            </span>
+                            <span class="form-field">
+                                <label class="label" for="input-10">Estimated test revenue</label>
+                                <input id="testRevenue" type="text" class="field" name="testRevenue" size="40" style="height:25px;width:95%">
                             </span>
                             <hr class="ucform-breakpoint">
                             <div class="header">The details</div>
