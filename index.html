@@ -50,6 +50,21 @@
         </style>
     </head>
     <body>
+        <span class="form-field" id="targetTemplate" style="display: none">
+
+        <!-- <input type="button" value="Remove"
+            onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br /> -->
+            <select class="targetFeature" id="targetFeature" name="targetFeature">
+                <option disabled selected value>-- Select An Option --</option>
+                <option value="regex">Regex</option>
+                <option value="contains">Contains</option>
+                <option value="desc">Description</option>
+                <option value="exactMatch">Exactly Matches</option>
+                <option value="excludes">Excludes</option>
+            </select>
+            <input type="text" class="targetText" name="targetText" size="40" style="height:27px;">
+
+        </span>
         <div class="container">
             <div class="uc_form top">
                 <div class="heading">
@@ -100,54 +115,54 @@
                     <div class="uc_form-content">
                         <div id="uc_hypothesis" class="hypothesis_form second_section">
                             <span class="form-field">
-                                <label class="label" for="input-10">Test ID:</label>
+                                <label class="label">Test ID:</label>
                                 <input id="testID" class="field" type="text" value="" name="testID" size="40">
                                 <span class="underfieldtext sidetext">This will be assigned automatically based on the ‘next’ ID, but you can change this and assign manually if needed</span>
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">Test Name:</label>
+                                <label class="label">Test Name:</label>
                                 <input id="testName" class="field" type="text" name="testName" size="39">
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">Description:</label>
+                                <label class="label">Description:</label>
                                 <textarea id="testDescription" class="field" name="testDescription" cols="39" rows="5" style="height:60px;"></textarea>
                             </span>
 
                             <hr class="ucform-breakpoint">
                             <div class="header">Hypothesis</div>
                             <span class="form-field">
-                                <label class="label" for="input-10">Since we observed that...</label>
+                                <label class="label">Since we observed that...</label>
                                 <textarea id="testObserve" class="field" name="observation" cols="39" rows="5" style="height:60px;" placeholder="What is the user problem?"></textarea>
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">By...</label>
+                                <label class="label">By...</label>
                                 <textarea id="testMethod" class="field" name="method" cols="39" rows="5" style="height:60px;" placeholder="Observation method"></textarea>
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">We want to...</label>
+                                <label class="label">We want to...</label>
                                 <textarea id="testChange" class="field" name="change" cols="39" rows="5" style="height:60px;" placeholder="Make this change"></textarea>
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">Which should lead to...</label>
+                                <label class="label">Which should lead to...</label>
                                 <textarea id="testExpect" class="field" name="expect" cols="39" rows="5" style="height:60px;" placeholder="Desired change in behaviour"></textarea>
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">Supporting Insights</label>
+                                <label class="label">Supporting Insights</label>
                                 <textarea id="supportInsights" class="field" name="insights" cols="39" rows="5" style="height:60px;"></textarea>
                             </span>
                             <hr class="ucform-breakpoint">
                             <div class="header">Metrics</div>
                             <span class="form-field">
-                                <label class="label" for="input-10">Primary Experiment Goal</label>
+                                <label class="label">Primary Experiment Goal</label>
                                 <input id="primeGoal" type="text" class="field" name="primeGoal" size="39" style="height:25px;width:95%">
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">Secondary Experiment Goals</label>
+                                <label class="label">Secondary Experiment Goals</label>
                                 <textarea id="secGoals" class="field" name="secGoals" cols="39" rows="5" style="height:60px;"></textarea>
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">Tracked Elements</label>
-                                <textarea id="events" class="field" name="gaevents" cols="39" rows="5" style="height:60px;"></textarea>
+                                <label class="label">Tracked Elements</label>
+                                <textarea id="events" class="field" name="gaevents" cols="40" rows="5" style="height:60px;"></textarea>
                             </span>
                             <hr class="ucform-breakpoint">
                             <div class="header">Targeting</div>
@@ -165,31 +180,38 @@
                                 </select>
                             </div>
                             <span class="form-field">
-                                <label class="label" for="input-10">Targeting Information</label>
-                                <textarea id="targeting" type="text" class="field" name="targeting" cols="39" rows="5" style="height:60px;"></textarea>
-                                <span class="underfieldtext">Page URLS, Regex Information, Exclusions</span>
+                                <label class="label">Targeting Information</label>
                             </span>
+                            <span id="writeTarget"></span>
+
+                            <input type="button" id="moreFields" value="+" />
+                            <!-- <div class="plus">
+                                <button id="plusTarget">
+                                    +
+                                </button>
+                            </div> -->
+                            <br />
                             <hr class="ucform-breakpoint">
                             <div class="header">Sample Size</div>
                             <span class="form-field">
-                                    <label class="label" id="sideBySide" for="input-10">Number of Variations:</label>
-                                    <label class="label" id="sideBySide" for="input-10">Traffic % Per variation:</label>
+                                    <label class="label" id="sideBySide">Number of Variations:</label>
+                                    <label class="label" id="sideBySide">Traffic % Per variation:</label>
                                     <input id="sideBySide" class="field" type="text" name="variations" size="40" style="height:25px;">
                                     <input id="sideBySide" type="text" class="field" name="trafficPercent" size="40" style="height:25px;">
                             </span>
                             <span class="form-field">
-                                    <label class="label" id="sideBySide" for="input-10">Minimum Detectable effect %</label>
-                                    <label class="label" id="sideBySide" for="input-10">Baseline Conversion Rate</label>
+                                    <label class="label" id="sideBySide">Minimum Detectable effect %</label>
+                                    <label class="label" id="sideBySide">Baseline Conversion Rate</label>
                                     <input id="sideBySide" class="field" type="text" name="minEffect" size="40" value="5" style="height:25px;">
                                     <input id="sideBySide" type="text" class="field" name="baseline" size="40" style="height:25px;">
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">Baseline primary metric info</label>
+                                <label class="label">Baseline primary metric info</label>
                                 <input id="baselineInfo" type="text" class="field" name="baselineInfo" size="40" style="height:25px;width:95%">
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10" id="sideBySide">Required Sample Size</label>
-                                <label class="label" for="input-10" id="sideBySide">Estimated Run Length (Days)</label>
+                                <label class="label" id="sideBySide">Required Sample Size</label>
+                                <label class="label" id="sideBySide">Estimated Run Length (Days)</label>
                                 <input id="sideBySide" type="text" class="field" name="sampleSize" size="40" style="height:25px;">
                                 <input id="sideBySide" class="field" name="runLength" size="40" style="height:25px;">
                             </span>
@@ -203,21 +225,21 @@
                                 </span>
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">Estimated test revenue</label>
+                                <label class="label">Estimated test revenue</label>
                                 <input id="testRevenue" type="text" class="field" name="testRevenue" size="40" style="height:25px;width:95%">
                             </span>
                             <hr class="ucform-breakpoint">
                             <div class="header">The details</div>
                             <span class="form-field">
-                                <label class="label" for="input-10">Change Log</label>
+                                <label class="label">Change Log</label>
                                 <textarea id="changeLog" class="field" name="changelog" cols="39" rows="5" style="height:60px;"></textarea>
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">Development Considerations</label>
+                                <label class="label">Development Considerations</label>
                                 <textarea id="devCons" class="field" name="devCons" cols="39" rows="5" style="height:60px;"></textarea>
                             </span>
                             <span class="form-field">
-                                <label class="label" for="input-10">Test Conflict Consideration</label>
+                                <label class="label">Test Conflict Consideration</label>
                                 <input id="testConflict" type="text" class="field" name="testConflict" size="40" style="height:25px;">
                             </span>
                             <hr class="ucform-breakpoint">

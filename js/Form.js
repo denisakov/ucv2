@@ -429,3 +429,42 @@
 		}, 3000)
 	});
 })();
+// var counter = (() => {
+//   var privateCounter = 2;
+//   function changeBy(val) {
+//     privateCounter += val;
+//   }
+//   return {
+//     increment: function() {
+//       changeBy(1);
+//     },
+//     decrement: function() {
+//       changeBy(-1);
+//     },
+//     value: function() {
+//       return privateCounter;
+//     }
+//   };
+// })();
+var counter = 0;
+function init() {
+	document.getElementById("moreFields").onclick = moreFields;
+	moreFields();
+};
+function moreFields() {
+	counter++;
+	var newFields = document.getElementById("targetTemplate").cloneNode(true);
+	newFields.id = '';
+	newFields.style.display = 'block';
+	var newField = newFields.childNodes;
+	for (var i=0;i<newField.length;i++) {
+		var theName = newField[i].name
+		if (theName)
+			newField[i].name = theName + counter;
+	}
+	var insertHere = document.getElementById('writeTarget');
+	insertHere.parentNode.insertBefore(newFields,insertHere);
+};
+document.getElementById("moreFields").addEventListener("click", moreFields); 
+
+window.onload = moreFields;
