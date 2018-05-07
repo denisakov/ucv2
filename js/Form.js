@@ -409,6 +409,10 @@
 		if ($filled.length) {
 			$filled.removeClass('input--filled');
 		}
+		var removable = $('.removable');
+		removable.forEach(function(elem){
+			elem.parentNode.removeChild(elem);
+		});
 	}
 	$('#uc_generator').submit(function (e) {
 		e.preventDefault();
@@ -429,42 +433,49 @@
 		}, 3000)
 	});
 })();
-// var counter = (() => {
-//   var privateCounter = 2;
-//   function changeBy(val) {
-//     privateCounter += val;
-//   }
-//   return {
-//     increment: function() {
-//       changeBy(1);
-//     },
-//     decrement: function() {
-//       changeBy(-1);
-//     },
-//     value: function() {
-//       return privateCounter;
-//     }
-//   };
-// })();
-var counter = 0;
+var counterTarget = 0;
 function init() {
-	document.getElementById("moreFields").onclick = moreFields;
-	moreFields();
+	document.getElementById("moreTracked").onclick = moreTracked;
+	moreTracked();
+	document.getElementById("moreTargets").onclick = moreTargets;
+	moreTargets();
 };
-function moreFields() {
-	counter++;
+function moreTargets() {
+	counterTarget++;
 	var newFields = document.getElementById("targetTemplate").cloneNode(true);
-	newFields.id = '';
+	newFields.id = 'removable';
 	newFields.style.display = 'block';
 	var newField = newFields.childNodes;
 	for (var i=0;i<newField.length;i++) {
 		var theName = newField[i].name
 		if (theName)
-			newField[i].name = theName + counter;
+			newField[i].name = theName + counterTarget;
 	}
 	var insertHere = document.getElementById('writeTarget');
 	insertHere.parentNode.insertBefore(newFields,insertHere);
+	return;
 };
-document.getElementById("moreFields").addEventListener("click", moreFields); 
+document.getElementById("moreTargets").addEventListener("click", moreTargets);
 
-window.onload = moreFields;
+var counterTracked = 0;
+function moreTracked() {
+	counterTracked++;
+	var newFields = document.getElementById("trackedTemplate").cloneNode(true);
+	newFields.id = 'removable';
+	newFields.style.display = 'block';
+	var newField = newFields.childNodes;
+	for (var i=0;i<newField.length;i++) {
+		var theName = newField[i].name
+		if (theName)
+			newField[i].name = theName + counterTracked;
+	}
+	var insertHere = document.getElementById('writeTracked');
+	insertHere.parentNode.insertBefore(newFields,insertHere);
+	return;
+};
+document.getElementById("moreTracked").addEventListener("click", moreTracked);
+
+window.onload = function () {
+	moreTargets();
+	moreTracked();
+};

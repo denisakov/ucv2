@@ -55,14 +55,26 @@
         <!-- <input type="button" value="Remove"
             onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br /> -->
             <select class="targetFeature" id="targetFeature" name="targetFeature">
-                <option disabled selected value>-- Select An Option --</option>
-                <option value="regex">Regex</option>
-                <option value="contains">Contains</option>
-                <option value="desc">Description</option>
-                <option value="exactMatch">Exactly Matches</option>
-                <option value="excludes">Excludes</option>
+                <option disabled selected value>-- Select Element --</option>
+                <option value="Regex">Regex</option>
+                <option value="Contains">Contains</option>
+                <option value="Description">Description</option>
+                <option value="Exactly Matches">Exactly Matches</option>
+                <option value="Excludes">Excludes</option>
             </select>
-            <input type="text" class="targetText" name="targetText" size="40" style="height:27px;">
+            <input type="text" class="targetText field" name="targetText" style="height:27px;">
+
+        </span>
+        <span class="form-field" id="trackedTemplate" style="display: none">
+
+        <!-- <input type="button" value="Remove"
+            onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br /> -->
+            <select class="trackedAction" id="trackedAction" name="trackedAction">
+                <option disabled selected value>-- Select Action --</option>
+                <option value="Clicked">Clicked</option>
+                <option value="Hovered Only">Hovered Only</option>
+            </select>
+            <input type="text" class="tarckedLabel field" name="trackedLabel" style="height:27px;">
 
         </span>
         <div class="container">
@@ -161,9 +173,12 @@
                                 <textarea id="secGoals" class="field" name="secGoals" cols="39" rows="5" style="height:60px;"></textarea>
                             </span>
                             <span class="form-field">
-                                <label class="label">Tracked Elements</label>
-                                <textarea id="events" class="field" name="gaevents" cols="40" rows="5" style="height:60px;"></textarea>
+                                <label class="label">Event Action&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;Event Label</label>
                             </span>
+                            <span id="writeTracked"></span>
+
+                            <input type="button" id="moreTracked" value="+" />
                             <hr class="ucform-breakpoint">
                             <div class="header">Targeting</div>
                             <div class="selectDevise form-field first-field">
@@ -184,7 +199,7 @@
                             </span>
                             <span id="writeTarget"></span>
 
-                            <input type="button" id="moreFields" value="+" />
+                            <input type="button" id="moreTargets" value="+" />
                             <!-- <div class="plus">
                                 <button id="plusTarget">
                                     +

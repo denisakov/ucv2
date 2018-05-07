@@ -453,15 +453,16 @@
         width: 50%;
     }
 
-    select.targetFeature{
+    select.targetFeature, select.trackedAction {
         width: 30%;
         margin-right: 3%;
         margin-bottom: 20px;
         float:left;
         margin-top:0px;
     }
-    input.targetText{
-        width: 64%;
+    input.targetText, input.tarckedLabel {
+        width: 62%;
+        height: 19px !important;
     }
     input#testID {
         width: 30%;
