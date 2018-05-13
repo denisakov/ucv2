@@ -60,12 +60,12 @@
                 <option value="Excludes">Excludes</option>
             </select>
             <input type="text" class="targetText field" name="targetText" style="height:27px;">
-            <input type="button" value="-"
+            <input type="button" value="x"
             onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br />
         </span>
         <span class="form-field" id="secGoals" style="display: none">
-            <input type="text" class="secGoal field" name="secGoal" style="height:27px;">
-            <input type="button" value="-"
+            <input type="text" class="secGoal field" name="secGoal">
+            <input type="button" value="x"
             onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br />
         </span>
         <span class="form-field" id="trackedTemplate" style="display: none">
@@ -77,7 +77,7 @@
                 <option value="Experiment Ran">Experiment Ran</option>
             </select>
             <input type="text" class="tarckedLabel field" name="trackedLabel" style="height:27px;">
-            <input type="button" value="-"
+            <input type="button" value="x"
                 onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br />
         </span>
         <div class="container">
@@ -178,7 +178,7 @@
                             </span>
                             <span id="writeGoals"></span>
                             <input type="button" id="moreGoals" value="+" />
-
+                            <br />
 
                             <span class="form-field">
                                 <label class="label">Tracked Elements</label>
