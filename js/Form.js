@@ -409,11 +409,11 @@
 		if ($filled.length) {
 			$filled.removeClass('input--filled');
 		}
-		var removable = $('.removable');
-		removable.forEach(function(elem){
-			elem.parentNode.removeChild(elem);
-		});
-	}
+		// var removable = $('.removable');
+		// removable.forEach(function(elem){
+		// 	elem.parentNode.removeChild(elem);
+		// });
+	};
 	$('#uc_generator').submit(function (e) {
 		e.preventDefault();
 		var docType = thisClientData.docType;
@@ -433,13 +433,34 @@
 		}, 3000)
 	});
 })();
-var counterTarget = 0;
+
 function init() {
 	document.getElementById("moreTracked").onclick = moreTracked;
 	moreTracked();
 	document.getElementById("moreTargets").onclick = moreTargets;
 	moreTargets();
+	document.getElementById("moreGoals").onclick = moreGoals;
+	moreGoals();
 };
+var counterGoals = 0;
+function moreGoals() {
+	counterGoals++;
+	var newFields = document.getElementById("secGoals").cloneNode(true);
+	newFields.id = 'removable';
+	newFields.style.display = 'block';
+	var newField = newFields.childNodes;
+	for (var i=0;i<newField.length;i++) {
+		var theName = newField[i].name
+		if (theName)
+			newField[i].name = theName + counterGoals;
+	}
+	var insertHere = document.getElementById('writeGoals');
+	insertHere.parentNode.insertBefore(newFields,insertHere);
+	return;
+};
+document.getElementById("moreGoals").addEventListener("click", moreGoals);
+
+var counterTarget = 0;
 function moreTargets() {
 	counterTarget++;
 	var newFields = document.getElementById("targetTemplate").cloneNode(true);
@@ -478,4 +499,5 @@ document.getElementById("moreTracked").addEventListener("click", moreTracked);
 window.onload = function () {
 	moreTargets();
 	moreTracked();
+	moreGoals();
 };

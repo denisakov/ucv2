@@ -51,10 +51,7 @@
     </head>
     <body>
         <span class="form-field" id="targetTemplate" style="display: none">
-
-        <!-- <input type="button" value="Remove"
-            onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br /> -->
-            <select class="targetFeature" id="targetFeature" name="targetFeature">
+          <select class="targetFeature" id="targetFeature" name="targetFeature">
                 <option disabled selected value>-- Select Element --</option>
                 <option value="Regex">Regex</option>
                 <option value="Contains">Contains</option>
@@ -63,19 +60,25 @@
                 <option value="Excludes">Excludes</option>
             </select>
             <input type="text" class="targetText field" name="targetText" style="height:27px;">
-
+            <input type="button" value="-"
+            onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br />
+        </span>
+        <span class="form-field" id="secGoals" style="display: none">
+            <input type="text" class="secGoal field" name="secGoal" style="height:27px;">
+            <input type="button" value="-"
+            onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br />
         </span>
         <span class="form-field" id="trackedTemplate" style="display: none">
-
-        <!-- <input type="button" value="Remove"
-            onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br /> -->
             <select class="trackedAction" id="trackedAction" name="trackedAction">
                 <option disabled selected value>-- Select Action --</option>
                 <option value="Clicked">Clicked</option>
                 <option value="Hovered Only">Hovered Only</option>
+                <option value="User saw">User saw</option>
+                <option value="Experiment Ran">Experiment Ran</option>
             </select>
             <input type="text" class="tarckedLabel field" name="trackedLabel" style="height:27px;">
-
+            <input type="button" value="-"
+                onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br />
         </span>
         <div class="container">
             <div class="uc_form top">
@@ -165,16 +168,20 @@
                             <hr class="ucform-breakpoint">
                             <div class="header">Metrics</div>
                             <span class="form-field">
-                                <label class="label">Primary Experiment Goal</label>
+                                <label class="label">Primary Experiment Goal and Description</label>
                                 <input id="primeGoal" type="text" class="field" name="primeGoal" size="39" style="height:25px;width:95%">
                             </span>
+
+
                             <span class="form-field">
-                                <label class="label">Secondary Experiment Goals</label>
-                                <textarea id="secGoals" class="field" name="secGoals" cols="39" rows="5" style="height:60px;"></textarea>
+                                <label class="label">Secondary Experiment Goals and Description</label>
                             </span>
+                            <span id="writeGoals"></span>
+                            <input type="button" id="moreGoals" value="+" />
+
+
                             <span class="form-field">
-                                <label class="label">Event Action&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;Event Label</label>
+                                <label class="label">Tracked Elements</label>
                             </span>
                             <span id="writeTracked"></span>
 
@@ -280,6 +287,7 @@
                             </div>
                          </div>
                     </div>
+                    <iframe style="border:none;width:100%;height:465px;" src="https://script.google.com/a/userconversion.com/macros/s/AKfycbw3b1J8RP2iJDeiEkNgdlR-SukKLfTdvWO79FbqVwJYrfBGu_Nq/exec"></iframe>
                     <div id='success'></div>
                     <div class="center">
                         <button type='submit' id="submitBtn">Send</button>

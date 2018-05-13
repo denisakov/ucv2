@@ -381,7 +381,9 @@
         margin-left: 3px;
     }
 
-    
+    input.secGoal.field{
+        padding-bottom: 0 !important;
+    }
     .second_section .field, select {
     background-color: #fff;
     background-image: none;
@@ -524,6 +526,7 @@
     
     input#objGoals,
     input#events,
+    input.secGoal,
     textarea#changeLog {
     width: 95%;
     margin-bottom: 10px;
